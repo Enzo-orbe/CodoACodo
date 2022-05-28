@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -31,11 +31,16 @@ const CarrouselComponent = ({ title, data }) => {
       >
         {data
           ? data?.results?.map((d) => (
-              <SwiperSlide className="swipper-div " key={d.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${d?.poster_path}`}
-                  alt="MoviePoster"
-                />
+              <SwiperSlide className="swipper-div" key={d.id}>
+                <figure>
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${d?.poster_path}`}
+                    alt="MoviePoster"
+                  />
+                  <figcaption>
+                    <p>{d?.original_title ? d?.original_title : d?.name}</p>
+                  </figcaption>
+                </figure>
               </SwiperSlide>
             ))
           : null}

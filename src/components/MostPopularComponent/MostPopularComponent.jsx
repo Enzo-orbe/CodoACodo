@@ -1,14 +1,10 @@
+import React, { useContext } from "react";
 import { Box } from "@chakra-ui/react";
-import React, { useContext, useEffect } from "react";
 import { MoviesContext } from "../../context/MoviesContext/MoviesContext";
 import CarrouselComponent from "../CarrouselComponent/CarrouselComponent";
 
 const MostPopularComponent = () => {
-  const { popular, getMostPopularMoviesData } = useContext(MoviesContext);
-
-  // useEffect(() => {
-  //   getMostPopularMoviesData();
-  // }, []);
+  const { popular } = useContext(MoviesContext);
 
   return (
     <Box bg="#141414">

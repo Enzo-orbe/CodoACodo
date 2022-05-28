@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Logo from "../../assets/img/netflix-logo.jpg";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { BsPlayFill } from "react-icons/bs";
@@ -7,11 +7,7 @@ import { MoviesContext } from "../../context/MoviesContext/MoviesContext";
 import "./BannerComponent.css";
 
 const BannerComponent = () => {
-  const { data, error, getMoviesPosterData } = useContext(MoviesContext);
-
-  useEffect(() => {
-    getMoviesPosterData();
-  }, []);
+  const { data, error } = useContext(MoviesContext);
 
   return (
     <Box
